@@ -1,2 +1,2 @@
 # website
-Two Scale Labs
+Homepage for Two Scale Labs LLC
