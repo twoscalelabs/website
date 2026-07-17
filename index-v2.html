@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Home | The Brooklyn Studio</title>
+  
+  <!-- Link to the separated stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <main class="main">
+      <div class="home">
+
+        <!-- 1. FIRST PHOTO CAROUSEL -->
+        <section id="fullWidthCarousel" class="full-width-carousel o-h">
+          <div class="h-screen">
+            <div class="swiper-container swiper full-width-carousel__swiper">
+              <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                  <figure class="base-image">
+                    <div class="base-image__inner has-ratio">
+                      <img src="https://cdn.sanity.io/images/wups1rn4/production/598d238158d875d5039799d58efcad91a17b945e-3840x1956.jpg?w=1920&auto=format" alt="Brooklyn Heights Townhouse Facade" class="lazyload">
+                    </div>
+                  </figure>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                  <figure class="base-image">
+                    <div class="base-image__inner has-ratio">
+                      <img src="https://cdn.sanity.io/images/wups1rn4/production/26194ead0440384326a098d80487769b1987fe30-3840x1956.jpg?w=1920&auto=format" alt="Brooklyn Heights Greek Revival Children's Bedroom" class="lazyload">
+                    </div>
+                  </figure>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                  <figure class="base-image">
+                    <div class="base-image__inner has-ratio">
+                      <img src="https://cdn.sanity.io/images/wups1rn4/production/c6d0b67b71cfca858ee4f08389ee51bb19e3b394-3840x1956.jpg?w=1920&auto=format" alt="Old Greenwich Waterfront House" class="lazyload">
+                    </div>
+                  </figure>
+                </div>
+              </div>
+              
+              <!-- Carousel Controls -->
+              <div class="swiper-button__container">
+                <div slot="button-prev" class="swiper-button-prev">
+                  <svg width="50" height="101" viewBox="0 0 50 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M52 100.039L2 50.5193L52 1.00011" stroke="currentColor" stroke-width="2"></path></svg>
+                </div>
+              </div>
+              <div class="swiper-button__container">
+                <div slot="button-next" class="swiper-button-next">
+                  <svg width="50" height="101" viewBox="0 0 50 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M52 100.039L2 50.5193L52 1.00011" stroke="currentColor" stroke-width="2"></path></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <button aria-label="Play carousel autoplay" class="full-width-carousel__btn-play">
+            <span aria-label="Play Image Carousel">▶</span>
+          </button>
+        </section>
+
+        <!-- 2. HEADER & 3. NAVIGATION (PROJECTS AND ABOUT ONLY) -->
+        <div class="homepage-header-wrapper">
+          <header id="theHeader" class="the-header flex ai-c jc-c headroom homepage">
+            <div class="container w-100 flex jc-sb">
+              
+              <!-- Logo -->
+              <a href="/" aria-current="page" aria-label="Link to Homepage" class="flex ai-c">
+                <svg preserveAspectRatio="xMidYMid" viewBox="0 0 1046 53" fill="none" xmlns="http://www.w3.org/2000/svg" class="the-header__logo">
+                  <g clip-path="url(#clip0_2432_11000)">
+                    <path d="M0 1V10.54H19.12V51.42H29.84V10.54H48.93V1H0ZM101.48 1V21H75.94V1H65.23V51.42H75.94V30.62H101.51V51.42H112.32V1H101.48ZM132.82 1V51.42H166.5L168.75 42.33H143.39V30.08H164.55V21.8H143.39V10.21H168.51L166.35 1.03L132.82 1Z"></path>
+                    <path d="M1034.48 26.56C1034.48 36.29 1027.48 43.31 1018.63 43.31C1009.63 43.31 1002.63 36.11 1002.63 26.38C1002.63 16.65 1009.74 9.63 1018.57 9.63C1027.57 9.63 1034.51 16.84 1034.51 26.56H1034.48ZM1045.51 26.38C1045.51 11.88 1034.17 0 1018.68 0C1003.19 0 991.75 11.88 991.75 26.56C991.75 41.06 1003.01 52.94 1018.59 52.94C1033.99 52.94 1045.51 41.15 1045.51 26.38ZM963.51 51.68H974.22V1.26H963.51V51.68ZM898.23 51.68H916.33C934.06 51.68 945.59 41.6 945.59 26.38C945.59 10.98 934.79 1.26 916.42 1.26H898.15L898.23 51.68ZM916.33 10.53C927.4 10.53 934.61 16.3 934.61 26.47C934.61 36.64 926.97 42.41 916.43 42.41H908.86V10.53H916.33ZM832.33 29.08C832.33 43.76 840.98 52.58 855.33 52.58C869.68 52.58 878.39 43.76 878.39 29.08V1.26H867.89V28.9C867.89 38.45 863.03 43.22 855.46 43.22C847.72 43.22 843.04 38.22 843.04 29.08V1.26H832.23L832.33 29.08ZM816.47 10.8V1.26H767.58V10.8H786.67V51.68H797.38V10.8H816.47ZM729.13 14.47C729.13 11.14 732.13 9.25 736.6 9.25C742.01 9.25 747.68 11.59 752.27 14.47H752.45V4.05C747.655 1.62473 742.343 0.396416 736.97 0.469999C726.08 0.469999 718.69 6.47 718.69 14.87C718.69 24.06 724.69 27.39 733.91 30.45C742.02 33.24 744.45 34.77 744.45 38.2C744.45 41.63 741.3 43.78 736.25 43.78C730.25 43.78 723.02 40.27 717.43 36.04L717.25 36.13L718.97 47.36C723.978 50.7248 729.866 52.5403 735.9 52.58C747.16 52.58 754.81 46.37 754.81 37.64C754.81 28.54 748.87 25.03 739.23 21.88C731.97 19.47 729.13 17.92 729.13 14.47Z"></path>
+                    <path d="M670.74 51.95H676.74V1.26H666.15L666.24 31.6L639.97 1.26H629.17V51.68H639.79L639.67 16.47L670.74 51.95ZM593.21 51.68V30.34L613.97 1.26H601.85L588.17 21.7L574.39 1.26H561.78L582.49 30.34V51.68H593.21ZM523.15 51.68H556.56V42.14H533.87V1.26H523.15V51.68ZM491.15 51.68H504.75V51.47L480.65 25.66L504.25 1.47V1.29H490.97L471.65 21.7H469.13V1.26H458.41V51.68H469.13V30.47H471.83L491.15 51.68ZM429.97 26.56C429.97 36.29 422.97 43.31 414.12 43.31C405.12 43.31 398.12 36.11 398.12 26.38C398.12 16.65 405.23 9.63 414.06 9.63C423.06 9.63 430 16.84 430 26.56H429.97ZM441 26.38C441 11.88 429.66 0 414.17 0C398.68 0 387.24 11.88 387.24 26.56C387.24 41.06 398.5 52.94 414.08 52.94C429.48 52.94 441 41.15 441 26.38ZM363.2 26.56C363.2 36.29 356.2 43.31 347.35 43.31C338.35 43.31 331.35 36.11 331.35 26.38C331.35 16.65 338.46 9.63 347.28 9.63C356.28 9.63 363.22 16.84 363.22 26.56H363.2ZM374.22 26.38C374.22 11.88 362.87 0 347.38 0C331.89 0 320.37 11.88 320.37 26.56C320.37 41.06 331.63 52.94 347.2 52.94C362.6 52.94 374.13 41.15 374.13 26.38H374.22ZM298.22 51.68H311.22L294.17 31.47C300.38 28.95 304.34 23.82 304.34 17.07C304.34 6.8 297.23 1.22 285.88 1.22H265.8V51.68H276.52V33.31H283.09L298.22 51.68ZM276.43 10.08H285.16C290.39 10.08 293.72 12.96 293.72 17.65C293.72 22.15 290.03 25.21 284.8 25.21H276.43V10.08ZM219.34 43.13V30.13H229.34C234.74 30.13 238.07 32.38 238.07 36.44C238.07 40.31 235.01 43.1 229.61 43.1L219.34 43.13ZM219.34 9.9H228.79C233.48 9.9 236.36 11.97 236.36 15.66C236.36 19.81 233.03 22.06 228.07 22.06H219.34V9.9ZM230.06 51.68C241.13 51.68 248.79 46.28 248.79 37.28C248.79 31.28 245 27.46 239.33 25.48C244.1 23.23 246.8 19.36 246.8 14.58C246.8 6.39 240.5 1.26 229.8 1.26H209.07V51.68H230.06Z"></path>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_2432_11000">
+                      <rect width="1045.46" height="52.95" fill="white"></rect>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+
+              <!-- Simplified Navigation -->
+              <nav aria-label="Main Navigation" class="simplified-nav">
+                <ul>
+                  <li><a href="/projects">Projects</a></li>
+                  <li><a href="/about-us">About</a></li>
+                </ul>
+              </nav>
+
+            </div>
+          </header>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>
