@@ -1,0 +1,17 @@
+<svg viewBox="-20 -20 140 140" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    /* 1. Default colors (Light Mode - Pure Black) */
+    .outline-shape { fill: none; stroke: #000000; } 
+    .filled-shape { fill: #000000; stroke: #000000; }
+
+    /* 2. System preference triggers this (Dark Mode - Pure White) */
+    @media (prefers-color-scheme: dark) {
+      .outline-shape { stroke: #ffffff; }
+      .filled-shape { fill: #ffffff; stroke: #ffffff; }
+    }
+  </style>
+
+  <!-- The two rectangles from your logo -->
+  <rect class="outline-shape" x="5" y="5" width="90" height="90" stroke-width="15" />
+  <rect class="filled-shape" x="5" y="65" width="30" height="30" stroke-width="15" />
+</svg>

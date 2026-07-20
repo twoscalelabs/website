@@ -1,15 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="night">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Two Scale Labs</title>
+
+  <!-- Standard SVG -->
+  <link rel="icon" href="tsl-favicon.svg" type="image/svg+xml">
+
+  <!-- Standard fallback for older browsers -->
+  <link rel="icon" href="tsl-favicon.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Your Custom JavaScript -->
+  <!-- The 'defer' attribute ensures this script doesn't block the page from rendering -->
+  <script src="js/stars.js" defer></script>
 </head>
-<body>
-  <h1>Two Scale Labs</h1>
-  <p>Welcome to <a href="https://twoscalelabs.com">twoscalelabs.com</a>.</p>
-  <nav>
-    <a href="/realmofreason">Realm of Reason</a>
-  </nav>
+
+
+
+<body class="text-base-content font-sans antialiased relative">
+
+  <!-- STAR BACKGROUND LAYERS -->
+  <div class="fixed inset-0 z-[-1] bg-base-100 overflow-hidden">
+    <div id="star-field-slow"></div>
+    <div id="star-field"></div>
+  </div>
+
+  <!-- NAVBAR COMPONENT -->
+  <div class="navbar fixed w-full top-0 px-6 lg:px-20 z-50">
+    <div class="flex-1">
+      <a href="#"
+        class="flex items-center gap-3 text-2xl font-extrabold tracking-tighter leading-tight text-white normal-case">
+        <!-- Icon -->
+        <svg viewBox="0 0 100 100" class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="5" width="90" height="90" fill="none" stroke="currentColor" stroke-width="15" />
+          <rect x="5" y="65" width="30" height="30" fill="currentColor" stroke="currentColor" stroke-width="15" />
+        </svg>
+        Two Scale Labs
+      </a>
+    </div>
+
+    <div class="flex-none">
+      <!-- DESKTOP MENU (Hidden on mobile) -->
+      <ul class="menu menu-horizontal px-1 space-x-2 font-semibold text-lg text-white hidden lg:flex">
+        <li><a href="realmofreason/" class="hover:text-primary transition">Realm of Reason</a></li>
+        <li><a href="ourstory/" class="hover:text-primary transition">Our Story</a></li>
+      </ul>
+
+      <!-- MOBILE HAMBURGER BUTTON (Hidden on desktop) -->
+      <!-- onclick triggers the dialog element's native showModal() function -->
+      <button class="btn btn-ghost text-white lg:hidden" onclick="mobile_menu.showModal()">
+        <svg viewBox="0 0 100 100" class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="65" width="30" height="30" fill="currentColor" stroke="currentColor" stroke-width="10" />
+          <rect x="65" y="5" width="30" height="30" fill="currentColor" stroke="currentColor" stroke-width="10" />
+          <rect x="65" y="65" width="30" height="30" fill="currentColor" stroke="currentColor" stroke-width="10" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+
+
+  <!-- MAIN CONTENT AREA -->
+  <!-- Takes exactly 100% of the screen height, placing the footer just beneath it -->
+  <!-- Added pt-24 (padding top) so any future content doesn't hide behind the fixed navbar -->
+  <main class="w-full min-h-screen flex flex-col justify-center items-center px-6 pt-24">
+    <!-- Future content goes here -->
+  </main>
+
+  <!-- FOOTER COMPONENT -->
+  <footer class="footer bg-base-100 mx-6 lg:mx-20 px-0 py-10 border-t border-white w-auto">
+    <aside>
+      <nav class="font-semibold text-base">
+        <header class="footer-title text-white opacity-100">Brooklyn, New York</header>
+        <p class="text-neutral-content">Two Scale Labs LLC</p>
+      </nav>
+    </aside>
+    <nav class="font-semibold text-base">
+      <header class="footer-title text-base">Explore</header>
+      <a href="realmofreason/" class="hover:text-primary transition">Realm of Reason</a>
+      <a href="ourstory/" class="hover:text-primary transition">Our Story</a>
+      <!-- <a href="#" class="hover:text-primary transition">Contact</a> -->
+    </nav>
+    <nav class="font-semibold text-base">
+      <header class="footer-title">Contact</header>
+      <a href="mailto:twoscalelabs@gmail.com" class="hover:text-primary transition">Support</a>
+      <a href="https://www.sashamanu.com/" target="_blank" class="hover:text-primary transition">Sasha Manu</a>
+      <a href="https://web.math.princeton.edu/~hgrayer/" target="_blank" class="hover:text-primary transition">Hezekiah
+        Grayer II</a>
+    </nav>
+  </footer>
+
+  <!-- MOBILE FULL-SCREEN MODAL -->
+  <dialog id="mobile_menu" class="modal">
+    <!-- max-w-none is required here because DaisyUI limits modal width by default -->
+    <div
+      class="modal-box w-[calc(100%-3rem)] h-full max-w-none max-h-none rounded-none flex flex-col justify-center items-center">
+
+      <!-- Close Button (Top Right) -->
+      <form method="dialog">
+        <button class="btn btn-ghost text-white btn-lg absolute right-4 top-4">
+          <svg viewBox="0 0 100 100" class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg">
+            <rect x="5" y="5" width="30" height="30" fill="currentColor" stroke="currentColor" stroke-width="10" />
+            <rect x="65" y="5" width="30" height="30" fill="currentColor" stroke="currentColor" stroke-width="10" />
+            <rect x="65" y="65" width="30" height="30" fill="currentColor" stroke="currentColor" stroke-width="10" />
+          </svg>
+        </button>
+      </form>
+
+      <!-- Modal Navigation Links -->
+      <!-- Added onclick="mobile_menu.close()" so the menu closes when a link is clicked -->
+      <ul class="menu text-center gap-8 text-4xl font-extrabold tracking-tight text-white">
+        <li><a href="realmofreason/" class="hover:text-primary transition justify-center"
+            onclick="mobile_menu.close()">Realm of
+            Reason</a></li>
+        <li><a href="ourstory/" class="hover:text-primary transition justify-center" onclick="mobile_menu.close()">Our
+            Story</a></li>
+      </ul>
+
+    </div>
+  </dialog>
 </body>
+
 </html>

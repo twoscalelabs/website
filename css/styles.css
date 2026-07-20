@@ -1,0 +1,98 @@
+    @keyframes slow-spin {
+        from {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        to {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+
+    #star-field,
+    #star-field-slow {
+        width: 200vw;
+        height: 200vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        will-change: transform;
+    }
+
+    #star-field {
+        animation: slow-spin 240s linear infinite;
+    }
+
+    #star-field-slow {
+        animation: slow-spin 480s linear infinite;
+    }
+
+    .star {
+        position: absolute;
+        background-color: #ffffff;
+    }
+
+    /* Register --t as an animatable number so we can drive cos()/sin() purely with CSS transforms
+       (no requestAnimationFrame, no per-frame JS — just a standard CSS animation). */
+    @property --t {
+        syntax: '<number>';
+        inherits: false;
+        initial-value: 0;
+    }
+
+    .wave-layer {
+        position: absolute;
+        top: -24px;
+        bottom: -24px;
+        /* Break out of the max-w-5xl container and span the full viewport width.
+         .member-row is horizontally centered inside a full-width <main>, so its
+         own center lines up with the viewport's center — left: 50% + width: 100vw
+         + translateX(-50%) recenters the layer around that shared point. */
+        left: 50%;
+        width: 100vw;
+        transform: translateX(-50%);
+        z-index: 0;
+        pointer-events: none;
+        overflow: visible;
+    }
+
+    .wave-box {
+        position: absolute;
+        top: 50%;
+        width: 8px;
+        height: 8px;
+        margin-top: -4px;
+        margin-left: -4px;
+        /* border-radius: 2px; */
+        /* --amp (set per-box in JS, -1..1) is the sine curve's shape at this x position.
+         --t animates 0 -> 1 every cycle; cos(--t * 360deg) is the shared oscillation
+         that every box in the wave rides on, so the whole curve breathes up and down
+         in place, like a standing wave. */
+        transform: translateY(calc(var(--amp, 0) * 22px * cos(var(--t) * 360deg)));
+        animation: wave-time 3.2s linear infinite;
+    }
+
+    .wave-box--primary {
+        /* DaisyUI v4 stores theme colors as raw OKLCH components (L C H),
+         so they must be read with oklch(), not hsl(). */
+        background-color: oklch(var(--bc));
+    }
+
+    .wave-box--secondary {
+        background-color: oklch(var(--bc));
+    }
+
+    @keyframes wave-time {
+        to {
+            --t: 1;
+        }
+    }
+
+    .member-row {
+        position: relative;
+        isolation: isolate;
+    }
+
+    .member-row>.card {
+        position: relative;
+        z-index: 10;
+    }

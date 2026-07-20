@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="lemonade">
+<html lang="en" data-theme="retro">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Two Scale Labs - Realm of Reason</title>
+  <title>Two Scale Labs - Our Story</title>
 
   <!-- Standard SVG -->
   <link rel="icon" href="../tsl-favicon.svg" type="image/svg+xml">
@@ -16,6 +16,8 @@
 
   <!-- Your Custom CSS -->
   <link rel="stylesheet" href="../css/styles.css">
+
+  <script src="../js/waves.js" defer></script>
 </head>
 
 
@@ -39,8 +41,8 @@
     <div class="flex-none">
       <!-- DESKTOP MENU (Hidden on mobile) -->
       <ul class="menu menu-horizontal px-1 space-x-2 font-semibold text-lg text-base-content hidden lg:flex">
-        <li><a href="../realmofreason/" class="btn-active btn-disabled">Realm of Reason</a></li>
-        <li><a href="../ourstory/" class="hover:text-primary transition">Our Story</a></li>
+        <li><a href="../realmofreason/" class="hover:text-primary transition">Realm of Reason</a></li>
+        <li><a href="../ourstory/" class="btn-active btn-disabled">Our Story</a></li>
       </ul>
 
       <!-- MOBILE HAMBURGER BUTTON (Hidden on desktop) -->
@@ -55,86 +57,65 @@
     </div>
   </div>
 
+
+
   <!-- MAIN CONTENT AREA -->
-  <main class="w-full flex flex-col justify-center items-center pt-24 pb-16">
+  <!-- Takes exactly 100% of the screen height, placing the footer just beneath it -->
+  <!-- Added pt-24 (padding top) so any future content doesn't hide behind the fixed navbar -->
+  <main class="w-full min-h-screen flex flex-col justify-center items-center px-6 pt-24 pb-12">
 
+    <!-- Team Members Container -->
+    <!-- ADDED: w-full max-w-5xl to constrain the width -->
+    <div class="flex flex-col gap-10 w-full max-w-5xl">
 
-    <div class="flex flex-col gap-10 px-6 h-96">
-      <!-- Added h-full to make the carousel fill the 96 (24rem) height -->
-      <div class="carousel carousel-center rounded-box h-full gap-4">
-        <div class="carousel-item h-full">
-          <img src="../img/cards mockup.png" alt="Box" class="h-full w-auto object-cover rounded-box" />
-        </div>
-
-        <!-- Added h-full to the item, and h-full w-auto object-cover to the images -->
-        <div class="carousel-item h-full">
-          <img src="../img/mockup2.png" alt="Box" class="h-full w-auto object-cover rounded-box" />
-        </div>
-
-        <div class="carousel-item h-full">
-          <img src="../img/mockup5.png" alt="Pizza" class="h-full w-auto object-cover rounded-box" />
-        </div>
-
-        <div class="carousel-item h-full">
-          <img src="../img/mockup6.jpg" alt="Pizza" class="h-full w-auto object-cover rounded-box" />
-        </div>
-      </div>
-    </div>
-    <!-- Top Container: Title & Buy Box (Constrained) -->
-    <div class="flex flex-col gap-10 w-full max-w-5xl px-6">
-      <div class="flex flex-col md:flex-row justify-between md:items-center gap-8 bg-base-100 p-8 md:p-12 ">
-        <div class="flex-1">
-          <h1 class="text-6xl md:text-7xl font-black tracking-tighter text-base-content leading-none mb-2">Realm of
-            Reason
-          </h1>
-          <div class="text-primary font-semibold text-lg mb-4 uppercase">The Math Fantasy Card Game</div>
-          <p class="leading-relaxed font-light max-w-lg">
-            A stripped-back approach to traditional playing cards. Designed in New York, printed on premium crushed
-            stock with a smooth finish for flawless handling. Nothing extra. Just the essentials.
-          </p>
-        </div>
-        <div class="flex flex-col items-center gap-4">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSebgFxog10gcPA6ak2U2jar0_qsflqnoy5_GphEknvhRV0UpA/viewform?usp=header"
-            class="btn btn-secondary btn-wide transition-transform text-lg uppercase font-semibold">
-            ICM Giveaway
-          </a>
-          <p>Expires Sunday, July 26th</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom Container: Philosophy & Specs Row (Constrained) -->
-    <div class="flex flex-col gap-10 w-full max-w-5xl px-6">
-      <div id="details" class="card bg-base-100 shadow-xl border border-base-200">
-        <div class="card-body py-12 md:px-12">
-          <h2 class="card-title mb-2">Mathematical connections, arguments
-            and twists.</h2>
-          <p class="leading-relaxed font-light mb-10 max-w-3xl">
-            Every element on the face of the card has been meticulously redrawn to reduce visual noise. The pips are
-            geometric, the court cards are abstract representations, and the typography is strictly functional. The
-            resulting deck feels entirely modern while remaining immediately recognizable during gameplay.
-          </p>
-
-          <!-- DAISY UI NATIVE SPECS -->
-          <div class="stats stats-vertical md:stats-horizontal border border-base-200 w-full bg-base-200/30">
-            <div class="stat">
-              <div class="stat-title text-primary font-semibold  uppercase">Cards</div>
-              <div class="stat-value text-2xl md:text-3xl tracking-tighter mt-1 text-base-content">108</div>
-            </div>
-            <div class="stat">
-              <div class="stat-title text-primary font-semibold  uppercase">Ages</div>
-              <div class="stat-value text-2xl md:text-3xl tracking-tighter mt-1 text-base-content">10+</div>
-            </div>
-            <div class="stat">
-              <div class="stat-title text-primary font-semibold uppercase">Players</div>
-              <div class="stat-value text-2xl md:text-3xl tracking-tighter mt-1 text-base-content">2-6</div>
-            </div>
+      <!-- Member 1 Row -->
+      <div class="member-row">
+        <div id="wave1" class="wave-layer"></div>
+        <div class="card md:card-side bg-base-100">
+          <!-- Picture (Left) - Reverted back to w-2/5 for original width -->
+          <figure class="md:w-2/5 p-8 flex justify-center items-center">
+            <img src="../img/sasha.jpeg" alt="Sasha Manu" class="object-cover w-56 h-56 rounded-full shadow-md" />
+          </figure>
+          <!-- Text (Right) - Reverted to w-3/5 and added py-10 for extra height -->
+          <div class="card-body md:w-3/5 justify-center py-10 md:pr-12">
+            <h2 class="card-title text-3xl font-bold">Sasha</h2>
+            <div class="text-primary font-semibold text-lg mb-2">Brooklyn, New York</div>
+            <p class="leading-relaxed">
+              Sasha Manu is an award-winning educator and writer working at the intersection of mathematics, science,
+              and interdisciplinary learning. He is currently the Founding Chair of Science and Mathematics at the Pine
+              Street School in New York City.
+            </p>
           </div>
-
         </div>
       </div>
-    </div>
 
+      <!-- Member 2 Row -->
+      <div class="member-row">
+        <div id="wave2" class="wave-layer"></div>
+        <div class="card md:card-side bg-base-100">
+          <!-- Picture (Left) -->
+          <figure class="md:w-2/5 p-8 flex justify-center items-center">
+            <img src="../img/hez.jpeg" alt="Hezekiah Grayer II" class="object-cover w-56 h-56 rounded-full shadow-md" />
+          </figure>
+          <!-- Text (Right) - Reverted to w-3/5 and added py-10 for extra height -->
+          <div class="card-body md:w-3/5 justify-center py-10 md:pr-12">
+            <h2 class="card-title text-3xl font-bold">Hez</h2>
+            <div class="text-secondary font-semibold text-lg mb-2">Palo Alto, California</div>
+            <p class="leading-relaxed">
+              Hezekiah Grayer II, Ph.D., is an academic researcher and educator in applied mathematics. His work
+              develops the theoretical
+              foundations of
+              fusion
+              energy
+              and
+              astrophysical plasma. He is an incoming Szegő Assistant Professor of Mathematics at Stanford
+              University.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </main>
 
   <!-- FOOTER COMPONENT -->
@@ -155,8 +136,8 @@
     </aside>
     <nav class="font-semibold text-base">
       <header class="footer-title">Explore</header>
-      <a href="../realmofreason/" class="btn-disabled">Realm of Reason</a>
-      <a href="../ourstory/" class="hover:text-primary transition">Our Story</a>
+      <a href="../realmofreason/" class="hover:text-primary transition">Realm of Reason</a>
+      <a href="../ourstory/" class="btn-disabled">Our Story</a>
       <!-- <a href="#" class="hover:text-primary transition">Contact</a> -->
     </nav>
     <nav class="font-semibold text-base">
@@ -165,7 +146,6 @@
       <a href="https://www.sashamanu.com/" target="_blank" class="hover:text-primary transition">Sasha Manu</a>
       <a href="https://web.math.princeton.edu/~hgrayer/" target="_blank" class="hover:text-primary transition">Hezekiah
         Grayer II</a>
-      <!-- <a href="#" class="hover:text-primary transition">Cookie Policy</a> -->
     </nav>
   </footer>
 
@@ -189,11 +169,10 @@
       <!-- Modal Navigation Links -->
       <!-- Added onclick="mobile_menu.close()" so the menu closes when a link is clicked -->
       <ul class="menu gap-8 text-4xl font-extrabold tracking-tight text-base-content">
-        <li><a href="../realmofreason/" class="btn-active active:text-primary btn-disabled justify-center"
+        <li><a href="../realmofreason/" class="hover:text-primary transition justify-center"
             onclick="mobile_menu.close()">Realm of
             Reason</a></li>
-        <li><a href="../ourstory/" class="hover:text-primary transition justify-center"
-            onclick="mobile_menu.close()">Our
+        <li><a href="../ourstory/" class="btn-active btn-disabled justify-center" onclick="mobile_menu.close()">Our
             Story</a>
         </li>
       </ul>
